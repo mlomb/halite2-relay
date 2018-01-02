@@ -59,7 +59,7 @@ ws.on('message', function(message) {
 		case "start":
 		
 		console.log("Starting bot...");
-		gameProcess = child_process.spawn(bot_command, { shell: true });
+		gameProcess = child_process.exec(bot_command, { shell: true });
 
 		gameProcess.stdin.setEncoding('utf-8');
 		gameProcess.stdout.setEncoding('utf8');
