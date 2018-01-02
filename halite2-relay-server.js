@@ -21,7 +21,7 @@ var inGame = false;
 var roomSize;
 do {
 	console.log("Select the room size (2 or 4): ");
-	roomSize = readInt();
+	roomSize = readInt(false);
 } while(roomSize != 2 && roomSize != 4);
 
 // Port

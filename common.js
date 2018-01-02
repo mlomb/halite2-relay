@@ -4,7 +4,7 @@
 	relay_internal_port = 8081;
 
 	/* Input functions */
-	readInt = function(canBeEmpty = false) {
+	readInt = function(canBeEmpty) {
 		var result = parseInt(readlineSync.question("> "));
 		if (typeof result === "number") {
 			if(isNaN(result)) {
@@ -13,7 +13,7 @@
 			} else
 				return result;
 		}
-		return readInt();
+		return readInt(canBeEmpty);
 	}
 
 	readString = function() {
@@ -31,7 +31,7 @@
 		}
 		console.log();
 		
-		var result = readInt();
+		var result = readInt(false);
 		if(result > 0 && result <= options.length) {
 			console.log();
 			return result - 1;
